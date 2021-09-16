@@ -1,0 +1,109 @@
+<p>emp works!</p>
+<h1>Student Registration</h1>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <label> header section</label>
+    </div>
+    <div class="card-body">
+      <div class="container">
+        <form #myData="ngForm" (ngSubmit)="onSubmit(myData)">
+          <div class="row" id="ename">
+            <label for="jaganName" class="col-2">Name </label>
+            <input
+              type="text"
+              id="jaganName"
+              name="jaganName"
+              class="col-6"
+              ngModel
+            />
+            <span class="col-4" id="jaganNameError"
+              >*please enter the name</span
+            >
+           
+          </div>
+          <div class="row" id="eid">
+            <label for="jaganAddr" class="col-2">Address </label>
+            <input
+              type="text"
+              id="jaganAddr"
+              name="jaganAddr"
+              class="col-6"
+              ngModel
+            />
+            <span class="col-4" id="jaganaddrError"
+              >*please enter the address</span
+            >
+          </div>
+
+          <button class="btn btn-primary" type="submit" id="jaganBtn">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="card-footer">
+      <label>@Copy rights reserved to jaganmohanreddy1997@gmail.com</label>
+    </div>
+  </div>
+</div>
+<h1>JQuery funtionality</h1>
+<div class="container">
+  <div>
+    <p>jquery funtionality....</p>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <button type="submit" id="btn1" class="btn btn-danger">Hide</button>
+    </div>
+    <div class="col-6">
+      <button type="submit" id="btn2" class="btn btn-primary">Show</button>
+    </div>
+  </div>
+</div>
+<h1>Student List</h1>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-1">
+          <label>Id</label>
+        </div>
+        <div class="col-4">
+          <label>Name</label>
+        </div>
+        <div class="col-4">
+          <label>Address</label>
+        </div>
+        <div class="col-3">
+          <label>Operation</label>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div *ngFor="let x of empData">
+        <div class="row">
+          <div class="col-1">
+            <label>{{ x.id }}</label>
+          </div>
+          <div class="col-4">
+            <label>{{ x.jaganName }}</label>
+          </div>
+          <div class="col-4">
+            <label>{{ x.jaganAddr }}</label>
+          </div>
+          <div class="col-3">
+            <button type="submit" class="btn btn-danger" (click)="onDelete(x)">
+              Delete |
+            </button>
+
+            <button type="submit" class="btn btn-primary" (click)="onEdit(x)">
+              Edit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer"></div>
+  </div>
+</div>

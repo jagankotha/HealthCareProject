@@ -1,0 +1,34 @@
+[
+  {
+    "firstname": "jagan",
+    "lastname": "mohan",
+    "email": "jagan343@gmail.com",
+    "gender": "male",
+    "course": "java script",
+    "remember": true
+  },
+  {
+    "firstname": "varsha",
+    "lastname": "ram",
+    "email": "varsha343@gmail.com",
+    "gender": "male",
+    "course": "java script",
+    "remember": true
+  },
+  {
+    "firstname": "varshini",
+    "lastname": "mohan",
+    "email": "varshini343@gmail.com",
+    "gender": "male",
+    "course": "java script",
+    "remember": true
+  },
+  {
+    "firstname": "ram",
+    "lastname": "mohan",
+    "email": "ram343@gmail.com",
+    "gender": "male",
+    "course": "java script",
+    "remember": true
+  }
+]

@@ -1,0 +1,77 @@
+<p>reactive-forms works!</p>
+<div class="box">
+  <h2>Login Registration</h2>
+  <form [formGroup]="registrationFrom">
+    <div class="form-group inputBox">
+      <input type="text" formControlName="userName" class="form-control " required />
+      <label>UserName:</label>
+    </div>
+    <div class="form-group inputBox">
+      <input type="password" formControlName="password"class="form-control" required />
+      <label>password</label>
+    </div>
+    <div class="form-group inputBox">
+      <input type="password" formControlName="confirmPassword" class="form-control " required/>
+      <label>Confirm Password</label>
+    </div>
+    <div class="form-group ">
+  <button type="submit">Register</button>
+    </div>
+  </form>
+  <div class="text-white text-center">
+      {{registrationFrom.value |json}}
+  </div>
+</div>
+
+<div class="container">
+    <h2>FORM VALIDATION-II</h2>
+
+    <form id="myFormTest" action="#" method="POST">
+        <div class="row">
+            <div class="col-2">
+                <label>Gender</label>
+            </div>
+            <div class="col-4">
+                <input type="radio" name="empGen" id="empGen1" value="Male" /> Male
+                <input type="radio" name="empGen" id="empGen2" value="Female" />
+                Female
+            </div>
+            <div class="col-6">
+                <span id="empGenError"></span>
+            </div>
+
+            <div class="col-2">
+                <label>Languages</label>
+            </div>
+            <div class="col-4">
+                <input type="checkbox" name="empLang" id="empLang1" value="ENG" />
+                ENG
+                <input type="checkbox" name="empLang" id="empLang2" value="HIN" />
+                HIN
+                <input type="checkbox" name="empLang" id="empLang3" value="TEL" />
+                TEL
+                <input type="checkbox" name="empLang" id="empLang4" value="KAN" />
+                KAN
+            </div>
+            <div class="col-6">
+                <span id="empLangError"></span>
+            </div>
+
+            <div class="col-2">
+                <label>Project</label>
+            </div>
+            <div class="col-4">
+              <select name="empProj" id="empProj" class="form-control">
+                  <option value="">--SELECT--</option>
+                  <option value="HTC">HTC</option>
+                  <option value="NIT">NIT</option>
+                  <option value="XYZ">XYZ</option>
+              </select>
+            </div>
+            <div class="col-6">
+                <span id="empProjError"></span>
+            </div>
+        </div>
+        <button type="submit"  id="mybtn" class="btn btn-success">Add</button>
+    </form>
+</div>

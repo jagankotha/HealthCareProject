@@ -1,0 +1,24 @@
+<div class="container">
+    <h3>EMPLOYEE REGISTER PAGE</h3>
+    <form #formData="ngForm" (ngSubmit)="onSubmit(formData.value)">
+       NAME   : <input type="text" name="empName" id="empName" class="form-control" ngModel/>
+       SALARY : <input type="number" name="empSal" id="empSal" class="form-control" ngModel/>
+       Department: <select name="empDept" id="empDept" class="form-control" ngModel>
+                        <option value="">-SELECT-</option>
+                        <option value="BA">BA</option>
+                        <option value="QA">QA</option>
+                        <option value="DEV">DEV</option>
+                    </select>
+        Address: <textarea name="empAddr" id="empAddr" class="form-control" ngModel></textarea>                        
+        <button type="submit" class="btn btn-success">Create</button>
+    </form>
+    
+</div>
+{{products |json}}
+
+<div>
+    <button type="submit" class="btn btn-success" (click)="onButtonClick2()">Check Once</button>
+</div>
+
+{{products | json }}
+

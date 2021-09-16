@@ -1,0 +1,28 @@
+<p>Student Registration Page</p>
+<div class="container">
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+    <p>
+      <label for="firstname">First Name</label>
+      <input type="text" name="firstname" ngModel />
+    </p>
+
+    <p>
+      <label for="lastname">Last Name</label>
+      <input type="text" name="lastname" ngModel />
+    </p>
+
+    <p>
+      <label for="email">Email </label>
+      <input type="text" id="email" name="email" ngModel />
+    </p>
+
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+  </form>
+
+  <div>
+    Enter Your Name: <input type="text" [(ngModel)]="name"  #jagan="ngModel" /> <br />
+    <button (click)="greet(jagan.value)">Greet Me!</button>
+  </div>
+</div>

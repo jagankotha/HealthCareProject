@@ -1,0 +1,97 @@
+<p>tdf works!</p>
+
+<p>Welcome to Template Driven Forms</p>
+<!-- <div class="container">
+    <label>User Name:</label>
+    <input type="text" class="form-control" name="username"
+    placeholder="enter username please"
+
+    >
+</div>
+ <button type="submit" class="btn btn-success"> Submit</button> -->
+
+<div class="container-fluid">
+  <h2>Registration page</h2>
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm.value)">
+    <div class="row">
+      <div class="col-6">
+        <div class="form-group">
+          <label>FirstName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstname"
+            name="firstname"
+            [(ngModel)]="studentModel.firstname"
+            #name="ngModel"
+           [class.is-invalid]="name.invalid && name.touched" required
+
+          />
+          
+          <div *ngIf="name.errors && (name.invalid || name.touched)">
+            <small class="text-danger" *ngIf="name.errors.required">Name required..</small>
+
+          </div>
+
+
+
+         <!-- <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name required..</small> -->
+        </div>
+        <div>
+            {{name.untouched}}
+        </div>
+        <div class="form-group">
+          <label>LastName</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastname"
+            name="lastname"
+            [(ngModel)]="studentModel.lastname"
+          />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            name="email"
+            [(ngModel)]="studentModel.email"
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label>Gender</label>
+          <input type="text" id="gender" class="form-control" [(ngModel)]="studentModel.gender" name="gender">
+        </div>
+        <div class="form-group">
+          <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="studentModel.course" name="course">
+            <option selected>Chooose...</option>
+            <option *ngFor="let x of course">{{ x }}</option>
+          </select>
+        </div>
+
+        <div class="custom-control custom-checkbox">
+          <input
+            type="checkbox"
+            class="custom-control-input"
+            id="customCheckDisabled1"
+            aria-disabled="false"
+            name="customCheckDisabled1"
+            [(ngModel)]="studentModel.remember"
+          />
+          <label class="custom-control-label" for="customCheckDisabled1"
+            >Remember Me</label
+          >
+        </div>
+      </div>
+      <button [disabled]="myForm.form.invalid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+<div>
+  {{ myForm.value | json }}
+</div>
+{{studentModel | json   }}
